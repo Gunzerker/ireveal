@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  authentication:
+    build: ./authentication-service
+    ports:
+      - '8000:4040'
+    restart: always
+  posts:
+    build: ./posts-service
+    ports:
+      - '8001:6001'
+    restart: always
+  sync:
+    build: ./sync-service
+    ports:
+      - '8002:6005'
+    restart: always
+  notification:
+    build: ./notification-service
+    ports:
+      - '8003:6002'
+    restart: always
